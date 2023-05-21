@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, signOut }) => {
 
         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 mr-10">
           <div className="relative ml-3">
-            <Link href='/user' className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-5 text-sm font-medium">{user?.email}</Link>
+            <Link href='/#' className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-5 text-sm font-medium">{user?.email}</Link>
             <a onClick={() => signOut()} className="text-white hover:bg-gray-700 hover:text-white rounded-md px-3 py-5 text-sm font-medium cursor-pointer">Logout</a>
           </div>
         </div>
