@@ -9,8 +9,8 @@ interface RepositoryListProps {
 
 const RepositoryList: React.FC<RepositoryListProps> = ({ data }) => {
   return (<>
-    <div className="carousel-item relative w-64 h-60 snap-start bg-zinc-800">
     <div className="w-full flex justify-end"><FavoriteButton id={data?.id} /></div>
+    <div className="carousel-item relative w-64 h-60 snap-start bg-zinc-800">
       
       <a className="h-full w-full aspect-video block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"></a>
       <a className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-30 z-10">
