@@ -9,11 +9,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === 'POST') {
       const { currentUser } = await serverAuth(req, res);
 
-      const { movieId } = req.body;
+      const { id } = req.body;
   
       const existingMovie = await prismadb.movie.findUnique({
         where: {
-          id: movieId,
+          id: id,
         }
       });
   
@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
         data: {
           favoriteIds: {
-            push: movieId
+            push: id
           }
         }
       });
@@ -38,11 +38,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (req.method === 'DELETE') {
       const { currentUser } = await serverAuth(req, res);
 
-      const { movieId } = req.body;
+      const { id } = req.body;
 
       const existingMovie = await prismadb.movie.findUnique({
         where: {
-          id: movieId,
+          id: id,
         }
       });
 
@@ -50,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         throw new Error('Invalid ID');
       }
 
-      const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
+      const updatedFavoriteIds = without(currentUser.favoriteIds, id);
 
       const updatedUser = await prismadb.user.update({
         where: {
