@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const { id } = req.body;
   
-      const existingid = await prismadb.id.findUnique({
+      const existingid = await prismadb.repository.findUnique({
         where: {
           id: id,
         }
@@ -40,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const { id } = req.body;
 
-      const existingid = await prismadb.id.findUnique({
+      const existingid = await prismadb.repository.findUnique({
         where: {
           id: id,
         }

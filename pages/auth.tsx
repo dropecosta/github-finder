@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useCallback, useState } from 'react';
+import { SetStateAction, useCallback, useState } from 'react';
 import Input from '@/components/Input';
 import { getSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -98,7 +98,7 @@ const Auth = () => {
                   type="text"
                   label="Username"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e: { target: { value: SetStateAction<string>; } }) => setName(e.target.value)}
                 />
               )}
               <Input
@@ -106,14 +106,14 @@ const Auth = () => {
                 type="email"
                 label="Email address or phone number"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e: { target: { value: SetStateAction<string>; } }) => setEmail(e.target.value)}
               />
               <Input
                 type="password"
                 id="password"
                 label="Password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e: { target: { value: SetStateAction<string>; } }) => setPassword(e.target.value)}
               />
             </div>
             <button
