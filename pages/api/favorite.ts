@@ -11,13 +11,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const { id } = req.body;
   
-      const existingMovie = await prismadb.movie.findUnique({
+      const existingid = await prismadb.id.findUnique({
         where: {
           id: id,
         }
       });
   
-      if (!existingMovie) {
+      if (!existingid) {
         throw new Error('Invalid ID');
       }
   
@@ -40,13 +40,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const { id } = req.body;
 
-      const existingMovie = await prismadb.movie.findUnique({
+      const existingid = await prismadb.id.findUnique({
         where: {
           id: id,
         }
       });
 
-      if (!existingMovie) {
+      if (!existingid) {
         throw new Error('Invalid ID');
       }
 
