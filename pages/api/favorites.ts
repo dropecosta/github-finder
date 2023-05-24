@@ -12,9 +12,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const { currentUser } = await serverAuth(req, res);
 
-    // console.log('currentUser', currentUser);
- 
-
     const favoritedRepositories = await prismadb.repository.findMany({
         where: {
           id: {
@@ -22,10 +19,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           }
         }
       })
-
-      // console.log('favoritedRepositories', favoritedRepositories);
-      // console.log('currentUser', currentUser);
-
 
     return res.status(200).json(currentUser.favoriteIds);
   } catch (error) {

@@ -12,8 +12,6 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ repositoryId }) => {
   const { mutate: mutateFavorites } = useFavorites();
   const { data: currentUser, mutate } = useCurrentUser();
 
-  console.log('FavoriteButton repositoryId', repositoryId);
-
   const isFavorite = useMemo(() => {
     const list = currentUser?.favoriteIds || [];
 

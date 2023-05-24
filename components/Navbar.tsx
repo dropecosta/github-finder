@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, signOut }) => {
       <div className="relative flex h-16 items-center justify-between">
         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div className="flex flex-shrink-0 items-center">
-          <Image src="/images/logo.svg" className="h-4 lg:h-7 ml-5 mt-5" alt="Logo" />
+          <Image src="/images/logo.svg" className="h-4 lg:h-7 ml-5 mt-5" width={100} height={30} alt="Logo" />
           </div>
         </div>
 

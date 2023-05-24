@@ -101,6 +101,8 @@ const Auth = (): JSX.Element => {
           <Image
             src="./images/logo.svg"
             className="h-10 ml-5 mt-5"
+            width={100}
+            height={30}
             alt="Logo"
           />
         </nav>

@@ -44,20 +44,12 @@ const Home: React.FC<HomeProps> = ({ session }) => {
   const { data: repositories } = useRepository(selectedLanguage);
   const { data: favorites } = useFavorites();
 
-  // console.log('favorites', favorites);
-
   useEffect(() => {
     if (repositories && Array.isArray(repositories.items)) {
       setRepos(repositories?.items);
       setFav(favorites);
     }
   }, [repositories, favorites]);
-
-
-  // console.log('repos', repos);
-  console.log('index favorites', favorites);
-  console.log('fav', fav);
-  // console.log('user', user);
 
 
   const handleLanguageChange = (language: string) => {

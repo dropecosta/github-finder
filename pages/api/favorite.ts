@@ -11,8 +11,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const { repositoryId } = req.body;
 
-      console.log('favorites repositoryId', repositoryId);
-
       const existingRepository = await prismadb.repository.findMany({
         where: {
           id: repositoryId
