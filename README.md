@@ -23,6 +23,7 @@
 - [x] Display of repositories of a certain category according to the selected technology;
 - [x] Register as a new user and log in to the restricted area;
 - [x] Login with email and password and possibility to login with Google or Github;
+- [x] Username display and logout funcionality at the top of the screen;
 - [x] Link to repositories and possibility to add and remove favorite repositories to favorites section;
 
 
