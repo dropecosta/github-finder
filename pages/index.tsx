@@ -9,6 +9,8 @@ import Navbar from "@/components/Navbar";
 import Repository from "@/components/Repository";
 import Favorites from "@/components/Favorites";
 import useFavorites from "@/hooks/useFavorites";
+import { RepositoryInterface } from "@/types";
+import { FaStarOfDavid } from "react-icons/fa";
 
 interface HomeProps {
   session: any;
@@ -35,17 +37,28 @@ export async function getServerSideProps(context: NextPageContext) {
 
 const Home: React.FC<HomeProps> = ({ session }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("javascript");
-  const [repos, setRepos] = useState<any[]>([]);
+  const [repos, setRepos] = useState<RepositoryInterface[]>([]);
+  const [fav, setFav] = useState<RepositoryInterface[]>([]);
 
   const { data: user } = useCurrentUser();
   const { data: repositories } = useRepository(selectedLanguage);
   const { data: favorites } = useFavorites();
 
+  // console.log('favorites', favorites);
+
   useEffect(() => {
     if (repositories && Array.isArray(repositories.items)) {
-      setRepos(repositories.items);
+      setRepos(repositories?.items);
+      setFav(favorites);
     }
-  }, [repositories]);
+  }, [repositories, favorites]);
+
+
+  // console.log('repos', repos);
+  console.log('index favorites', favorites);
+  console.log('fav', fav);
+  // console.log('user', user);
+
 
   const handleLanguageChange = (language: string) => {
     setSelectedLanguage(language);
@@ -86,8 +99,11 @@ const Home: React.FC<HomeProps> = ({ session }) => {
   return (
     <>
       <Navbar user={user} signOut={signOut} /> 
-
-      <Favorites data={favorites} />
+    <div className="flex ml-5 my-10">,
+      {fav?.map((favorites) => (<>
+      <Favorites key={favorites?.id} data={favorites} repos={repositories} />
+      </>))}
+    </div>
 
       <div className="ml-5 my-10">
         <h1>Top {selectedLanguage} Repositories:</h1>

@@ -1,0 +1,36 @@
+import { NextApiRequest, NextApiResponse } from "next";
+import axios from 'axios';
+import prismadb from '../../lib/prismadb';
+import serverAuth from "../../lib/serverAuth";
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    
+  try {
+    if (req.method !== 'GET') {
+      return res.status(405).end();
+    }
+
+    const { currentUser } = await serverAuth(req, res);
+
+    // console.log('currentUser', currentUser);
+ 
+
+    const favoritedRepositories = await prismadb.repository.findMany({
+        where: {
+          id: {
+            in: currentUser.favoriteIds,
+          }
+        }
+      })
+
+      // console.log('favoritedRepositories', favoritedRepositories);
+      // console.log('currentUser', currentUser);
+
+
+    return res.status(200).json(currentUser.favoriteIds);
+  } catch (error) {
+
+    console.log(error);
+    return res.status(500).end();
+  }
+}

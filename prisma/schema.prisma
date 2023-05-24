@@ -1,5 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// // This is your Prisma schema file,
+// // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -21,7 +21,7 @@ model User {
   updatedAt      DateTime  @updatedAt
   sessions       Session[]
   accounts       Account[]
-  favoriteIds    String[]  @db.ObjectId
+  favoriteIds    String[]
 }
 
 model Account {
@@ -60,30 +60,13 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Technology {
-  id                     String                 @id @default(uuid()) @map("_id")
-  name                   String                 @unique
-  repositoryTechnologies RepositoryTechnology[]
-}
-
 model Repository {
-  id                     String                 @id @default(uuid()) @map("_id") @db.ObjectId
-  name                   String
-  description            String?
-  language               String?
-  stars                  Int?
-  forks                  Int?
-  url                    String
-  createdAt              DateTime               @default(now()) @map("created_at")
-  repositoryTechnologies RepositoryTechnology[]
-}
-
-model RepositoryTechnology {
-  id           String     @id @default(uuid()) @map("_id") @db.ObjectId
-  technology   Technology @relation(fields: [technologyId], references: [id])
-  technologyId String
-  repository   Repository @relation(fields: [repositoryId], references: [id])
-  repositoryId String
-
-  @@index([technologyId, repositoryId], name: "idx_technology_repository")
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  language    String?
+  stars       Int?
+  forks       Int?
+  url         String
+  createdAt   DateTime @default(now()) @map("created_at")
 }
