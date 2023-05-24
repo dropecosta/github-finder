@@ -5,6 +5,13 @@
 application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below. 
 <br /><br /> 
 
+![App register](https://github.com/dropecosta/github-finder/assets/13908414/5dfe3c08-c0bd-415d-986f-38d648df464c)
+<br /><br /> 
+![App login](https://github.com/dropecosta/github-finder/assets/13908414/b8d6a75c-c5fe-4a90-a20d-308d0e4f8e19)
+<br /><br /> 
+![Home screen](https://github.com/dropecosta/github-finder/assets/13908414/a6d6642c-5bfd-4bce-837d-062a41befdc9)
+
+
 ### Features
 
 - [x] Display of repositories of a certain category according to the selected technology;
@@ -37,7 +44,16 @@ GOOGLE_CLIENT_ID=< -- Your GOOGLE_CLIENT_ID -- >
 GOOGLE_CLIENT_SECRET=< -- Your GOOGLE_CLIENT_SECRET -- >
 
 ˋˋˋ
-(If you have difficulty with this step, please contact me and I can help)
+(If you have difficulty with this step, please contact me and I can help! :))
+
+
+To login, register with email and password or access the login screen with the following credentials:
+
+### ˋˋˋ
+E-mail: test"gmail.com
+Password: 1234
+
+ˋˋˋ
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
