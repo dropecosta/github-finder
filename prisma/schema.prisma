@@ -61,12 +61,10 @@ model VerificationToken {
 }
 
 model Repository {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
+  id          String  @id @map("_id")
   description String?
   language    String?
   stars       Int?
   forks       Int?
-  url         String
-  createdAt   DateTime @default(now()) @map("created_at")
+  url         String?
 }

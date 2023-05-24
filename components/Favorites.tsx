@@ -9,8 +9,9 @@ interface FavoritesProps {
 }
 
 const Favorites: React.FC<FavoritesProps> = ({ data, repos }) => {
+
   return (<>
-    <div key={data?.id} className="carousel-item relative w-64 h-60 snap-start bg-zinc-800 shadow-lg ml-1">
+     <div key={data?.id} className="carousel-item relative w-64 h-60 snap-start bg-zinc-800 shadow-lg ml-1">
     <div className="flex justify-end z-20 absolute right-0 pr-2 pt-2">
       <FavoriteButton repositoryId={data.toString()} />
     </div>

@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       })
 
-    return res.status(200).json(currentUser.favoriteIds);
+    return res.status(200).json(currentUser?.favoriteIds);
   } catch (error) {
 
     console.log(error);

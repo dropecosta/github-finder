@@ -12,7 +12,7 @@ const RepositoryList: React.FC<RepositoryListProps> = ({ data }) => {
   return (<>
         <div className="carousel-item relative w-64 h-64 snap-start bg-zinc-800">
           <div className="flex justify-end z-20 absolute right-0 pr-2 pt-2">
-            <FavoriteButton repositoryId={data.name.toString()} />
+            <FavoriteButton repositoryId={data?.name?.toString()} />
           </div>
           <a href={data.svn_url} rel="noopener noreferrer" target="_blank">
             <div className="h-full w-full aspect-video block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"></div>

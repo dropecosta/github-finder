@@ -44,6 +44,7 @@ const Home: React.FC<HomeProps> = ({ session }) => {
   const { data: repositories } = useRepository(selectedLanguage);
   const { data: favorites } = useFavorites();
 
+
   useEffect(() => {
     if (repositories && Array.isArray(repositories.items)) {
       setRepos(repositories?.items);
