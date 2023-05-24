@@ -6,4 +6,6 @@ export interface RepositoryInterface {
     owner: {
       login: string;
     };
+    svn_url: string;
+
   }
