@@ -36,6 +36,8 @@ Runs the test watcher in an interactive mode:
 
 ### `npm run dev`
 
+### Environment variables (.env)
+
 I added the environment variables (.env) at the root of the project to facilitate the execution, if you want, you can change the values for your own access. To configure environment variables, add an ".env" file at the root of the application with the following content:
 
 ```
