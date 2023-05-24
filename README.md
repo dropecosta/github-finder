@@ -33,7 +33,7 @@ Runs the test watcher in an interactive mode:
 
 To setup the environments variables, add an ".env" file in the root of the application with the following content:
 
-### ˋˋˋ
+
 DATABASE_URL="mongodb+srv://dropecosta:bbyiIeoRn9GW68H9@cluster0.r2tj8yj.mongodb.net/test"
 NEXTAUTH_JWT_SECRET="NEXT-JWT-SECRET"
 NEXTAUTH_SECRET="NEXT-SECRET"
@@ -43,7 +43,7 @@ GITHUB_AUTH_TOKEN=< -- Your Github Auth Token -- >
 GOOGLE_CLIENT_ID=< -- Your GOOGLE_CLIENT_ID -- >
 GOOGLE_CLIENT_SECRET=< -- Your GOOGLE_CLIENT_SECRET -- >
 
-ˋˋˋ
+
 (If you have difficulty with this step, please contact me and I can help! :))
 
 
