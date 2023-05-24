@@ -18,7 +18,6 @@ application to discover repositories on Github based on categories. When clickin
 - [x] Register as a new user and log in to the restricted area;
 - [x] Login with email and password and possibility to login with Google or Github;
 - [x] Link to repositories and possibility to add and remove favorite repositories to favorites section;
-- [x] Temperature data forecast for the next 7 days.
 
 
 ### Available Scripts
