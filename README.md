@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id='top'>
 
-## Getting Started
+<h1 align="center">Github Finder</a></h1>
 
-First, run the development server:
+application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below. 
+<br /><br /> 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [x] Display of repositories of a certain category according to the selected technology;
+- [x] Register as a new user and log in to the restricted area;
+- [x] Login with email and password and possibility to login with Google or Github;
+- [x] Link to repositories and possibility to add and remove favorite repositories to favorites section;
+- [x] Temperature data forecast for the next 7 days.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Available Scripts
 
-## Learn More
+In the project directory, you can run:
 
-To learn more about Next.js, take a look at the following resources:
+### `npm install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Runs the test watcher in an interactive mode:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### `npm run dev`
 
-## Deploy on Vercel
+To setup the environments variables, add an ".env" file in the root of the application with the following content:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ˋˋˋ
+DATABASE_URL="mongodb+srv://dropecosta:bbyiIeoRn9GW68H9@cluster0.r2tj8yj.mongodb.net/test"
+NEXTAUTH_JWT_SECRET="NEXT-JWT-SECRET"
+NEXTAUTH_SECRET="NEXT-SECRET"
+GITHUB_ID=< -- Your Github ID -- >
+GITHUB_SECRET=< -- Your Github Secret -- >
+GITHUB_AUTH_TOKEN=< -- Your Github Auth Token -- >
+GOOGLE_CLIENT_ID=< -- Your GOOGLE_CLIENT_ID -- >
+GOOGLE_CLIENT_SECRET=< -- Your GOOGLE_CLIENT_SECRET -- >
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ˋˋˋ
+(If you have difficulty with this step, please contact me and I can help)
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
+
+<a href='#top'>🔼 Back to top</a>
+
+---
+
+Developed with 🧡 by Pedro Reis
