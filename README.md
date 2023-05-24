@@ -2,7 +2,7 @@
 
 <h1 align="center">Github Finder</a></h1>
 
-<div align="center"Application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below.</div>
+<div align="center">Application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below.</div>
 <br /><br /> 
 
 ![App register](https://github.com/dropecosta/github-finder/assets/13908414/5dfe3c08-c0bd-415d-986f-38d648df464c)
