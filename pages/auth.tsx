@@ -1,16 +1,30 @@
 import axios from 'axios';
-import { SetStateAction, useCallback, useState } from 'react';
+import { SetStateAction, useCallback, useEffect, useState, useRef } from 'react';
 import Input from '@/components/Input';
-import { getSession, signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import Image from 'next/image'
 
-const useAuth = () => {
+interface AuthProps {
+  email: string;
+  name: string;
+  password: string;
+  variant: 'login' | 'register';
+  setEmail: React.Dispatch<SetStateAction<string>>;
+  setName: React.Dispatch<SetStateAction<string>>;
+  setPassword: React.Dispatch<SetStateAction<string>>;
+  toggleVariant: () => void;
+  login: () => Promise<void>;
+  register: () => Promise<void>;
+}
+
+const useAuth = (): AuthProps => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [variant, setVariant] = useState('login');
+  const [variant, setVariant] = useState<'login' | 'register'>('login');
   const router = useRouter();
 
   const toggleVariant = useCallback(() => {
@@ -20,6 +34,7 @@ const useAuth = () => {
   }, []);
 
   const login = useCallback(async () => {
+
     try {
       await signIn('credentials', {
         email,
@@ -35,6 +50,7 @@ const useAuth = () => {
   }, [email, password, router]);
 
   const register = useCallback(async () => {
+
     try {
       await axios.post('/api/register', {
         email,
@@ -43,6 +59,7 @@ const useAuth = () => {
       });
 
       login();
+
     } catch (error) {
       console.log(error);
     }
@@ -62,7 +79,7 @@ const useAuth = () => {
   };
 };
 
-const Auth = () => {
+const Auth = (): JSX.Element => {
   const {
     email,
     name,
@@ -75,12 +92,13 @@ const Auth = () => {
     login,
     register,
   } = useAuth();
+  
 
   return (
     <div className="relative h-full w-full bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
         <nav className="px-12 py-5">
-          <img
+          <Image
             src="./images/logo.svg"
             className="h-10 ml-5 mt-5"
             alt="Logo"
@@ -98,7 +116,7 @@ const Auth = () => {
                   type="text"
                   label="Username"
                   value={name}
-                  onChange={(e: { target: { value: SetStateAction<string>; } }) => setName(e.target.value)}
+                  onChange={(e: { target: { value: SetStateAction<string>; }; }) => setName(e.target.value)}
                 />
               )}
               <Input
@@ -106,14 +124,14 @@ const Auth = () => {
                 type="email"
                 label="Email address or phone number"
                 value={email}
-                onChange={(e: { target: { value: SetStateAction<string>; } }) => setEmail(e.target.value)}
+                onChange={(e: { target: { value: SetStateAction<string>; }; }) => setEmail(e.target.value)}
               />
               <Input
                 type="password"
                 id="password"
                 label="Password"
                 value={password}
-                onChange={(e: { target: { value: SetStateAction<string>; } }) => setPassword(e.target.value)}
+                onChange={(e: { target: { value: SetStateAction<string>; }; }) => setPassword(e.target.value)}
               />
             </div>
             <button

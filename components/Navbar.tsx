@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Link from 'next/link';
 import { SignOutParams, SignOutResponse, signOut } from 'next-auth/react';
+import Image from 'next/image';
 
 
 interface NavbarProps {
@@ -31,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, signOut }) => {
       <div className="relative flex h-16 items-center justify-between">
         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div className="flex flex-shrink-0 items-center">
-          <img src="/images/logo.svg" className="h-4 lg:h-7 ml-5 mt-5" alt="Logo" />
+          <Image src="/images/logo.svg" className="h-4 lg:h-7 ml-5 mt-5" alt="Logo" />
           </div>
         </div>
 
