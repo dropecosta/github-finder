@@ -36,7 +36,7 @@ Runs the test watcher in an interactive mode:
 
 ### `npm run dev`
 
-To setup the environments variables, add an ".env" file in the root of the application with the following content:
+I added the environment variables (.env) at the root of the project to facilitate the execution, if you want, you can change the values for your own access. To configure environment variables, add an ".env" file at the root of the application with the following content:
 
 ```
 DATABASE_URL="mongodb+srv://dropecosta:bbyiIeoRn9GW68H9@cluster0.r2tj8yj.mongodb.net/test"
