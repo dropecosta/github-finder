@@ -37,31 +37,6 @@ Runs the test watcher in an interactive mode:
 
 ### `npm run dev`
 
-### Environment variables (.env)
-
-I added the environment variables (.env) at the root of the project to facilitate the execution, if you want, you can change the values for your own access. To configure environment variables, add an ".env" file at the root of the application with the following content:
-
-```
-DATABASE_URL="mongodb+srv://dropecosta:bbyiIeoRn9GW68H9@cluster0.r2tj8yj.mongodb.net/test"
-NEXTAUTH_JWT_SECRET="NEXT-JWT-SECRET"
-NEXTAUTH_SECRET="NEXT-SECRET"
-GITHUB_ID=< -- Your Github ID -- >
-GITHUB_SECRET=< -- Your Github Secret -- >
-GITHUB_AUTH_TOKEN=< -- Your Github Auth Token -- >
-GOOGLE_CLIENT_ID=< -- Your GOOGLE_CLIENT_ID -- >
-GOOGLE_CLIENT_SECRET=< -- Your GOOGLE_CLIENT_SECRET -- >
-```
-
-(If you have difficulty with this step, please contact me and I can help! :))
-
-
-To login, register with email and password or access the login screen with the following credentials:
-
-```
-E-mail: test@gmail.com
-Password: 1234
-```
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 <br />
