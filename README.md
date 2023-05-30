@@ -5,12 +5,6 @@
 <div align="center">Application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below.</div>
 <br /><br /> 
 
-![App register](https://github.com/dropecosta/github-finder/assets/13908414/5dfe3c08-c0bd-415d-986f-38d648df464c)
-<br /><br /> 
-![App login](https://github.com/dropecosta/github-finder/assets/13908414/b8d6a75c-c5fe-4a90-a20d-308d0e4f8e19)
-<br /><br /> 
-![Home screen](https://github.com/dropecosta/github-finder/assets/13908414/a6d6642c-5bfd-4bce-837d-062a41befdc9)
-
 ### Build with
 
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
