@@ -1,8 +1,8 @@
 <div id='top'>
 
-<h1 align="center">Github Finder</a></h1>
+<h1>Github Finder</a></h1>
 
-<div align="center">Application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below.</div>
+<div>Application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below.</div>
 <br /><br /> 
 
 ### Build with
