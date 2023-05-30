@@ -3,7 +3,7 @@
 <h1>Github Finder</a></h1>
 
 <div>Application to discover repositories on Github based on categories. When clicking on a button, the repositories appear in the slider below.</div>
-<br /><br /> 
+<br />
 
 ### Build with
 
